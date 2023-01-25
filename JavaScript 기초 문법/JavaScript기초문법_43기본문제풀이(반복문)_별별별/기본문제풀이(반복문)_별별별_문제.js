@@ -6,7 +6,9 @@ function answer(num) {
 
   // 코드 구현 시작 영역
 
-  // …
+  for (let i = 0; i < num; i++) {
+    result += '*'
+  }
 
   // 코드 구현 종료 영역
 
