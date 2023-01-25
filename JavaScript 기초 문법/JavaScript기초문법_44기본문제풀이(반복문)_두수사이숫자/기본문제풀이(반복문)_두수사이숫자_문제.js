@@ -5,8 +5,14 @@ function answer(x, y) {
   let result = [];
 
   // 코드 구현 시작 영역
-
-  // …
+  if (x < y) {
+    for (let i = x; i <= y; i++) {
+      result.push(i)
+    }
+  }
+  for (let i = y; i <= x; i++) {
+    result.push(i)
+  }
 
   // 코드 구현 종료 영역
 
