@@ -4,11 +4,15 @@
 function answer(withdraw, total) {
   let result;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  if(withdraw % 5 !==0){
+    result = total
+  }else{
+    if(total - withdraw -0.5 < 0){
+      result = total
+    }else{
+      result = total - withdraw -0.5
+    }
+  }
 
   return result;
 }
