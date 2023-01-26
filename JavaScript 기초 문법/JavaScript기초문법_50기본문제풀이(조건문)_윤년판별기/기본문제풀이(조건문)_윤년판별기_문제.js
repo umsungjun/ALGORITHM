@@ -4,11 +4,11 @@
 function answer(year) {
   let result;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  if(year % 4===0 || year % 100 ===0){
+    result = 'ture'
+  }else{
+    result = 'false'
+  }
 
   return result;
 }

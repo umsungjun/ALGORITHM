@@ -9,7 +9,7 @@ function answer(a, b, c, d) {
   }else if((a/b) < (c/d)){
     result = -1
   }else[
-    result = 0
+    result = 0 
   ]
 
   return result;
