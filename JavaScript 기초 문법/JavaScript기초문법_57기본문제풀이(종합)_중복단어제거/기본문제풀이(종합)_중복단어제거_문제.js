@@ -2,14 +2,11 @@
 
 /* user code */
 function answer(arr) {
-  let new_arr = [];
+  
 
-  // 코드 구현 시작 영역
+  const setArr = new Set(arr)
 
-  // …
-
-  // 코드 구현 종료 영역
-
+  let new_arr = [...setArr];
   return new_arr;
 }
 
