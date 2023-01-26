@@ -4,11 +4,7 @@
 function answer(x, y) {
   let result = 1;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  result = x ** y
 
   return result;
 }
