@@ -13,12 +13,8 @@ function answer(str) {
   );
   let day;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
-
+  const date = new Date(str)
+    day = week[date.getDay()]
   return day;
 }
 
