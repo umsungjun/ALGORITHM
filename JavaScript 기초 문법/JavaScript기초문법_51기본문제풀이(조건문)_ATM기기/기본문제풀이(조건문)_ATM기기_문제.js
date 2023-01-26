@@ -6,7 +6,7 @@ function answer(withdraw, total) {
 
   if(withdraw % 5 !==0){
     result = total
-  }else{
+  }else{ 
     if(total - withdraw -0.5 < 0){
       result = total
     }else{
