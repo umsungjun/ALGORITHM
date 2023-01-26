@@ -6,11 +6,15 @@ function answer(score) {
 
   // 코드 구현 시작 영역
 
-  // …
+  for(let nums of score){
+    average +=nums
+  }
+  average /= score.length
 
+  average = average.toFixed(2)
   // 코드 구현 종료 영역
 
-  return average;
+  return  average;
 }
 
 /* main code */
