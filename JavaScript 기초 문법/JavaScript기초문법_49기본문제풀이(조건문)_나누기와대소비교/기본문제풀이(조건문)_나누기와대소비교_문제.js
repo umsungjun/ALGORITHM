@@ -4,11 +4,13 @@
 function answer(a, b, c, d) {
   let result;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  if((a/b) > (c/d)){
+    result = 1
+  }else if((a/b) < (c/d)){
+    result = -1
+  }else[
+    result = 0
+  ]
 
   return result;
 }
