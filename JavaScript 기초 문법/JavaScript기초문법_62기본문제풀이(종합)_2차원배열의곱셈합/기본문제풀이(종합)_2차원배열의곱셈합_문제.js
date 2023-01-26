@@ -4,11 +4,11 @@
 function answer(arr) {
   let product = 1;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  for(let i=0; i<arr.length; i++){
+    for(let j=0; j<arr[i].length; j++){
+      product *= arr[i][j]
+    }
+  }
 
   return product;
 }
