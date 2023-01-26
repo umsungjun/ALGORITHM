@@ -6,11 +6,25 @@ function answer(employee) {
 
   // 코드 구현 시작 영역
 
-  // …
+  // const bigCell = Math.max(...employee)
+  
+  // employee.find((num, i)=>{
+  //   if(num===bigCell){
+  //     employee_id = i+1
+  //   }
+  // })
 
+  let max = 0
+
+  for(let i=0; i<employee.length; i++){
+    if(employee[i]>max){
+      max = employee[i]
+      employee_id = i + 1
+    }
+  }
   // 코드 구현 종료 영역
 
-  return average;
+  return employee_id;
 }
 
 /* main code */
