@@ -2,13 +2,9 @@
 
 /* user code */
 function answer(user) {
-  let reverse = [];
+  let reverse = user.reverse()
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  
 
   return reverse;
 }
