@@ -6,13 +6,19 @@ function answer(s, e) {
   sequence.push(s);
   sequence.push(e);
 
-  // 코드 구현 시작 영역
+  let sum
+ 
+  while(1){
+    sum = s - e   
+    s = e
+    e = sum
 
-  // …
+    if(e < 0) break;
 
-  // 코드 구현 종료 영역
+     sequence.push(e)
 
-  return sequence;
+  }
+  return sequence
 }
 
 /* main code */
