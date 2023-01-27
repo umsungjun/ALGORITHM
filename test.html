@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>좋아하는 자동차 브랜드를 고르시오</h1>
+
+    <label for="car">예제1: html element에 직접 이벤트 등록하기</label>
+    <select name="carBox" id="car">
+        <option value="choose">선택</option>
+        <option value="audi">audi</option>
+        <option value="bmw">bmw</option>
+        <option value="benz">benz</option>
+    </select>
+    <span id="text">당신이 고른 브랜드는!!!</span>
+</body>
+<script>
+    const car = document.querySelector('#car')
+    const text = document.querySelector('#text')
+
+    document.addEventListener('DOMContentLoaded', () => {
+        car.addEventListener('change', (e) => {
+            console.log(e.target.value)
+            let likeCar = e.target.value
+            text.innerText = `당신이 고른 브랜드는!!! ${likeCar}`
+            likeCar.style.color = 'red'
+
+        })
+    })
+
+</script>
+
+</html>
