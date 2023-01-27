@@ -263,15 +263,70 @@
 //     console.log('finaly')
 // })
 
-const test = async (a,b)=>{
-    let res = new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve(a+b)
-        },3000)
-    })
+ 
 
-    let result = await res
-    console.log(result)
+// 동기는 하나가 끝날때까지 기다렸다가 다음게 실행되는거고
+// 비동기는 순서에 상관없이 
+
+// const fetchUser = (isSucess)=>{
+//     return new Promise((resoleve, reject)=>{
+//         setTimeout(()=>{
+//             if(isSucess){
+//                 resoleve({
+//                     id:1,
+//                     name:'sungjun',
+//                     gender:'mail',
+//                     email:'umseongjun@naver.com'
+//                 })
+//             }else{
+//                 reject('회원 정보 조회에 실패하였습니다.')
+//             }
+//         },3000)
+        
+//     })
+// }
+
+// fetchUser(true).then((sucess)=>{
+//     console.log(sucess)
+// }).catch((reject)=>{
+//     console.log(reject)
+// })
+
+// function a(){
+//     return 1
+// }
+
+// function b(){
+//     return a()+1
+// }
+
+// function c(){
+//    return b()+1
+// }
+// result = c()
+// console.log(result)
+
+// function excute(){
+//     console.log('1')
+//     setTimeout(()=>{
+//         console.log('2'); // web에서 제공하는 비동기 방식의 setTimeout은 건너뛰고 callstack이 비게 되면 3초 뒤에 실행 // 비동기 처리 그냥 넘어가게
+//     },3000)
+//     console.log('3')
+// }
+
+// excute()
+
+function runInDelay(callback, seconds){
+    if(!callback) return new Error('no callback')
+    if(seconds<=0) throw new Error('시간이 0보다 작습니다.')
+    seconds *=1000
+    setTimeout(()=>{
+        callback()
+    },seconds)
 }
 
-test(3,10)
+function callback(){
+    console.log('실행')
+}
+
+runInDelay('', 0) 
