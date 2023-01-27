@@ -187,31 +187,91 @@
 
 // myFunc(1,10, succeessCallback, failCallback)
 
-const loginUser = (id, pw, onSucess, onError)=>{
-    console.log('Mached id & pass')
-    if(pw === 'corect'){
-        onSucess(id)
-    }else{
-        onError('정보가 일치하지 않습니다!')
-    }
+// const loginUser = (id, pw, onSucess, onError)=>{
+//     console.log('Mached id & pass')
+//     if(pw === 'corect'){
+//         onSucess(id)
+//     }else{
+//         onError('정보가 일치하지 않습니다!')
+//     }
+// }
+
+// const getPermission = (userId, onSucess, onError)=>{
+//     console.log('Acess DB and load user permission');
+//     if(userId < 1000){
+//         let permission = ['perm1', 'perm2', 'perm3']
+//         onSucess(permission)
+//     }else{
+//         onError('Load permission Faild')
+//     }
+// }
+
+// const onSucess = (sucess)=>{
+//     console.log(sucess, '님 환영합니다')
+// }
+
+// const onError = (err)=>{
+//     console.log(err);
+// }
+
+// loginUser('엄성준', 'corect',onSucess, onError)
+
+// let pr = new Promise((resolve, reject)=>{
+//     // resolve('rosolve called')
+//     reject('reject call')
+// })
+
+// pr.then((sucess)=>{
+//     console.log('sucess', sucess)
+// }).catch((err)=>{
+//     console.log('catch',err)
+// }).finally(()=>{
+//     console.log('filanl');
+// })
+
+// const asynkFunc = (isSucess)=>{
+//     setTimeout(()=>{
+//         if(isSucess){
+//             return {id :13, name:'sungjun'}
+//         }else{
+//             throw new Error('faild')
+//         }
+//     },3000)
+// }
+
+// let result = asynkFunc(true)
+// console.log(result); // non bloking 형식이라 바로 실행됨
+
+// const asynkFunc = (isSucess)=>{
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             if(isSucess){
+//                 resolve({id :13, name:'sungjun'})
+//             }else{
+//                 reject(new Error('faild'))
+//             }
+//         },3000)
+//     })
+    
+// }
+
+// asynkFunc(true).then((sucess)=>{
+//     console.log(sucess)
+// }).catch((fail)=>{
+//     console.log(fail);
+// }).finally(()=>{
+//     console.log('finaly')
+// })
+
+const test = async (a,b)=>{
+    let res = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(a+b)
+        },3000)
+    })
+
+    let result = await res
+    console.log(result)
 }
 
-const getPermission = (userId, onSucess, onError)=>{
-    console.log('Acess DB and load user permission');
-    if(userId < 1000){
-        let permission = ['perm1', 'perm2', 'perm3']
-        onSucess(permission)
-    }else{
-        onError('Load permission Faild')
-    }
-}
-
-const onSucess = (sucess)=>{
-    console.log(sucess, '님 환영합니다')
-}
-
-const onError = (err)=>{
-    console.log(err);
-}
-
-loginUser('엄성준', 'corect',onSucess, onError)
+test(3,10)
