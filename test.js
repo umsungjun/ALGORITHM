@@ -145,18 +145,73 @@
 
 // console.log(result);
 
-const recusive = (crr) => {
-    if (crr == 1) return crr
+// const recusive = (crr) => {
+//     if (crr == 1) return crr
 
-    return recusive(crr - 1) * crr
+//     return recusive(crr - 1) * crr
+// }
+
+// recusive(crr - 1) * crr
+// recusive(crr - 1) * crr
+// recusive(crr - 1) * crr
+// recusive(crr - 1) * crr
+
+
+
+// result = recusive(5)
+// console.log(result);
+
+
+// function myFunc(p1, p2, succeessCallback, failCallback){
+//     try{
+//         console.log(`p1 + p2 = ${p1+p2}`);
+//         result = p1 + p2
+
+//         if(result < 10){
+//             succeessCallback(result)
+//         }else{
+//             noWheereFunc()
+//         }
+//     }catch(err){
+//         failCallback(err)
+//     }
+// }
+
+// const succeessCallback = function(result){
+//     console.log('the result is' + result);
+// }
+
+// const failCallback = function(err){
+//     console.log('Faild resaon' + err)
+// }
+
+// myFunc(1,10, succeessCallback, failCallback)
+
+const loginUser = (id, pw, onSucess, onError)=>{
+    console.log('Mached id & pass')
+    if(pw === 'corect'){
+        onSucess(id)
+    }else{
+        onError('정보가 일치하지 않습니다!')
+    }
 }
 
-// recusive(crr - 1) * crr
-// recusive(crr - 1) * crr
-// recusive(crr - 1) * crr
-// recusive(crr - 1) * crr
+const getPermission = (userId, onSucess, onError)=>{
+    console.log('Acess DB and load user permission');
+    if(userId < 1000){
+        let permission = ['perm1', 'perm2', 'perm3']
+        onSucess(permission)
+    }else{
+        onError('Load permission Faild')
+    }
+}
 
+const onSucess = (sucess)=>{
+    console.log(sucess, '님 환영합니다')
+}
 
+const onError = (err)=>{
+    console.log(err);
+}
 
-result = recusive(5)
-console.log(result);
+loginUser('엄성준', 'corect',onSucess, onError)
