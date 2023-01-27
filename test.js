@@ -316,17 +316,141 @@
 
 // excute()
 
-function runInDelay(callback, seconds){
-    if(!callback) return new Error('no callback')
-    if(seconds<=0) throw new Error('시간이 0보다 작습니다.')
-    seconds *=1000
-    setTimeout(()=>{
-        callback()
-    },seconds)
+// function runInDelay(callback, seconds){
+//     if(!callback) return new Error('no callback')
+//     if(seconds<=0) throw new Error('시간이 0보다 작습니다.')
+//     seconds *=1000
+//     setTimeout(()=>{
+//         callback()
+//     },seconds)
+// }
+
+// function callback(){
+//     console.log('실행')
+// }
+
+// runInDelay('', 0) 
+
+// function runInDelay(seconds){
+//     return new Promise((resolve, reject)=>{
+//         if(seconds<0) reject(new Error('실패함'))
+//         setTimeout(()=>{
+//             resolve()
+//         },seconds*1000)
+//     })
+
+
+// }
+// runInDelay(2).then(()=>{
+//     console.log('타이머 완료');
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log('끝났다')
+// })
+
+
+// function fetchEgg(chicken){
+//     return Promise.resolve(`${chicken} => 'egg'`)
+// }
+
+// function fryEgg(chicken){
+//     return Promise.resolve(`${chicken} => 'egg'`)
+// }
+
+// function getChiken(){
+//     return Promise.resolve('three => chiken')
+// }
+
+// getChiken().then((chicken)=> fetchEgg(chicken)).then((egg)=>console.log(egg))
+
+function getBanana(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve('🍌')
+        }, 1000)
+    })
 }
 
-function callback(){
-    console.log('실행')
+function getApple(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve('🍎')
+        },3000)
+    })
 }
 
-runInDelay('', 0) 
+function getOrange(){
+    return Promise.reject(new Error('no Orange'))
+}
+
+
+// getBanana().then((banana)=>{
+//     getApple().then((apple)=>{
+//         return [banana, apple]
+//     })
+// }).then(console.log)
+// console.clear()
+// getBanana().then((banana)=>{
+//     return getApple().then((apple)=>{
+//         return [banana, apple]
+//     })
+// }).then((result)=>{
+//     console.log(result)
+// }) // 실행되는데 1초 + 3초 4초가 걸림 이런걸 해결할 수 있는게 promise all
+
+// Promise.all([getBanana(), getApple()]).then((result)=>{
+//     console.log(result) //배열로 반환됨
+// })
+
+// Promise.race([getBanana(), getApple()]).then((result)=>{
+//     console.log(result) // 가장먼저 실행된 게 들어옴
+// })
+
+// Promise.all([getBanana(), getApple(), getOrange()]).then((result)=>{
+//     console.log(result) //배열로 반환됨
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+// Promise.allSettled([getBanana(), getApple(), getOrange()]).then((result)=>{
+//     console.log(result) //배열로 반환됨
+// }) // 성공하든 실패하든 결과를 배열로 묶어서 리턴해줌
+
+
+console.clear()
+// async function fetchFruits(){
+//     const banana = await getBanana()
+//     const apple = await getApple()
+
+//     return [banana, apple]
+//     // return getBanana().then((banana)=>getApple().then((apple)=>[banana, apple]))
+// } 
+
+// fetchFruits().then((result)=>{
+//     console.log(result)
+// })
+// fetchFruits().then(console.log)
+
+
+function getChiken(){
+    return Promise.resolve('chiken')
+}
+
+function getEgg(chicken){
+    return Promise.resolve(`${chicken} => egg`)
+}
+
+function getFry(egg){
+    return Promise.resolve(`${egg} => fry`)
+}
+
+async function chicken(){
+    const chicken = await getChiken()
+    const egg = await getEgg(chicken)
+    const fry = await getFry(egg)
+
+    return `${egg} ${fry}`
+}
+
+chicken().then(console.log)
