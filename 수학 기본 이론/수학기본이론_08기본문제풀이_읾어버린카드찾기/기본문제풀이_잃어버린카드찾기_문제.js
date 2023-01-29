@@ -7,13 +7,17 @@ function answer(a, b, c) {
   // sort
   num = [a, b, c];
   num.sort((x, y) => x - y);
-
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
-
+  let d = 0
+  for (let i = 1; i < num.length; i++) {
+    d += num[i] - num[i - 1]
+  }
+  d /= num.length // 3으로 나누면 등차가 나옴
+  // if (Math.abs(num[0] - num[1]) > Math.abs(num[1] - num[2])) {
+  //   number = num[0] + Math.abs(num[1] - num[2])
+  // } else {
+  //   number = num[1] + Math.abs(num[0] - num[1])
+  // }
+  let location = num[2] - num[1] > num[1] - num[0] ? num[0] + d : num[1] + d
   return number;
 }
 
