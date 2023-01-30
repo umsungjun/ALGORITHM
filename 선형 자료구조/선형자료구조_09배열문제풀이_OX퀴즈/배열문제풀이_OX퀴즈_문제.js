@@ -4,12 +4,26 @@
 function answer(mark) {
   let result = 0;
 
-  // 코드 구현 시작 영역
+  // const answer = [1]
 
-  // …
-
-  // 코드 구현 종료 영역
-
+  // for (let i = 1; i < mark.length; i++) {
+  //   if (mark[i] === 1) {
+  //     answer.push(answer[answer.length - 1] + 1)
+  //   } else if (mark[i] === 0) {
+  //     answer.push(0)
+  //   }
+  // }
+  // for (let i = 0; i < answer.length; i++) {
+  //   result += answer[i]
+  // }
+  let score = 0
+  for (let i = 0; mark.length; i++) {
+    if (mark[i]) {
+      result += ++score
+    } else {
+      score = 0
+    }
+  }
   return result;
 }
 
