@@ -2,13 +2,38 @@
 
 /* user code */
 function answer(s, e) {
-  let result = [];
+  /* let result = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-  // 코드 구현 시작 영역
+  const numArr = []
 
-  // …
+  for (let i = s; i <= e; i++) {
+    numArr.push(String(i))
+  }
 
-  // 코드 구현 종료 영역
+  numArr.forEach((num) => {
+    for (let i = 0; i < num.length; i++) {
+      for (let j = 0; j < 10; j++) {
+        if (num[i] == j) {
+          result[j] += 1
+        }
+      }
+    }
+  }) */
+
+  let result = []
+  for (let i = 0; i < 10; i++) { // result의 0~9번째 index에 0으로 초기화
+    result[i] = 0
+  }
+
+  let num
+  for (let i = s; i <= e; i++) {
+    num = i
+    while (num != 0) {
+      result[num % 10]++ //129 라고 치면 9가 남음
+      num /= 10 //12.9
+      num = parseInt(num) //12
+    }
+  }
 
   return result;
 }
