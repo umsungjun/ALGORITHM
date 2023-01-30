@@ -2,13 +2,13 @@
 
 /* user code */
 function answer(chess) {
+
+  const chessAnswer = [1,1,2,2,2,8]
   let result = [];
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  for(let i=0; i<chessAnswer.length; i++){
+    result.push(chessAnswer[i] - chess[i])
+  }
 
   return result;
 }

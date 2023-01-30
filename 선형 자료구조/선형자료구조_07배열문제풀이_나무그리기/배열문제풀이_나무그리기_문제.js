@@ -2,13 +2,46 @@
 
 /* user code */
 function answer(height) {
-  let str = "";
+  let str = "\n";
+  // let star =1
 
-  // 코드 구현 시작 영역
+  // for(let i=1; i<=height; i++){
+    
+  //   for(let k=1; k<=height-k; k++){
+      
+  //     str+=' '
+  //   }
 
-  // …
+  //   for(let j=1; j<=star; j++){
+  //     str+='*'
+  //   }
+    
+  //   str+='\n' 
+    
+  //   star+=2
+  // }
 
-  // 코드 구현 종료 영역
+  // for(let i=0; i<height; i++){
+  //   for(let j=0; j<height-i-1; j++){
+  //     str+= ' '
+  //   }
+  //   for(let j=0; j< i*2+1; j++){
+  //     str+='*'
+  //   }
+  //   str += '\n'
+  // }
+  
+  for(let i=0; i<height; i++){
+    for(let j=0; j<height-i-1; j++){
+      str+=' '
+    }
+
+    for(let j=0; j< i*2+1; j++){
+      str +='*'
+    }
+
+    str+='\n'
+  }
 
   return str;
 }

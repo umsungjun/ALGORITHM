@@ -2,13 +2,15 @@
 
 /* user code */
 function answer(nums) {
-  let result = [];
-
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  let result = []
+  let minValue = Math.min(...nums)
+  console.log(minValue)
+  
+  for(let i=0; i<nums.length; i++){
+    if(nums[i] === minValue){
+      result.push(i)
+    }
+  }
 
   return result;
 }

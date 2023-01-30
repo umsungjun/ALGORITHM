@@ -2,14 +2,11 @@
 
 /* user code */
 function answer(nums) {
-  let result = [];
+  // let result = [];
 
-  // 코드 구현 시작 영역
+  nums.sort((a,b)=> a-b).reverse()
 
-  // …
-
-  // 코드 구현 종료 영역
-
+  let result = nums.splice(0,2)
   return result;
 }
 

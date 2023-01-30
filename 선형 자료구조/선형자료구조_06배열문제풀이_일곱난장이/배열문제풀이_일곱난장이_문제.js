@@ -3,13 +3,21 @@
 /* user code */
 function answer(dwarf) {
   let result = [];
+  let out = []
+  let sum =0
+  
+  for(let i=0; i<dwarf.length; i++){
+    sum+= dwarf[i]
+  }
+  for(let i=0; i<dwarf.length; i++){
+    for(let j=i+1; j<dwarf.length; j++){
+      if(sum - (dwarf[i]+dwarf[j]) == 100){
+        out.push(dwarf[i], dwarf[j])
+      }
+    }
+  }
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
-
+  result = dwarf.filter((item) => !out.includes(item))
   return result;
 }
 
