@@ -17,7 +17,7 @@ function answer(a, b, c) {
   // } else {
   //   number = num[1] + Math.abs(num[0] - num[1])
   // }
-  let location = num[2] - num[1] > num[1] - num[0] ? num[0] + d : num[1] + d
+  let index = num[2] - num[1] > num[1] - num[0] ? num[0] + d : num[1] + d
   return number;
 }
 
