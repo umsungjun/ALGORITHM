@@ -3,13 +3,19 @@
 /* user code */
 function answer(blocks) {
   let result = 0;
+  let sum = 0
 
-  // 코드 구현 시작 영역
+  for (let i = 0; i < blocks.length; i++) {
+    sum += blocks[i]
+  }
+  const average = sum / blocks.length
+  console.log(sum / blocks.length)
 
-  // …
-
-  // 코드 구현 종료 영역
-
+  blocks.forEach((block) => {
+    if (block > average) {
+      result += block - average
+    }
+  })
   return result;
 }
 
