@@ -4,14 +4,46 @@
 function answer(length) {
   let result = [];
 
-  // 코드 구현 시작 영역
+  // 1. result를 2차원 배열로 
+  for(let i=0; i<length; i++){
+    result[i]= []
+  }
 
-  // …
 
-  // 코드 구현 종료 영역
+  /*  2. 패턴 기반으로 반복문 구현
+        1) length길이만큼 시작
+        2) length-i 만큼 진행 하면서 방향 바뀜 두번씩 진행
+        3) length == 0 프로그램 종료
+  */
+ let x,y,num 
+  x=y=num = 0
+  let direction = 1
 
+ x--
+  while(1){
+    for(let i=0; i<length; i++){
+      x+=direction
+      result[y][x] = ++num
+    }
+
+    if(length == 0) break
+    length--
+    for(let i=0; i<length; i++){
+      y+=direction
+      result[y][x] = ++num
+    }
+
+    direction *=-1
+  }
   return result;
 }
+
+// if 3 
+/* [
+  [1,2,3]
+  [8,9 4]
+  [7,6,5]
+] */
 
 /* main code */
 let input = [
