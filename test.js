@@ -493,23 +493,47 @@ function LinkedList(){
     this.length =0
 }
 
-LinkedList.prototype.size = ()=>{
+LinkedList.prototype.size = function(){
     return this.length
 }
 
-LinkedList.prototype.isEmpty= ()=>{
+LinkedList.prototype.isEmpty= function(){
     return this.length ===0
 }
 
+LinkedList.prototype.printNode = function(){
+    for(let node = this.head; node !=null; node = node.next){
+        process.stdout.write(`${node.data} ->`)
+    }
+    console.log('null')
+}
+
+LinkedList.prototype.append = function(value){
+    let node = new Node(value)
+    current = this.head
+
+    if(this.head === null){
+        this.head = node
+    }else{
+        while(current.next !==null){
+            current = current.next
+        }
+        current.next = node
+    }
+    this.length++
+}
+
 let ll = new LinkedList()
-console.log(ll)
 
 ll.head = new Node(123)
 ll.length++
-console.log(ll)
+
 
 ll.head.next = new Node(456)
 ll.length++
-console.log(ll);
+console.log(ll)
 
-console.log(ll.size());
+ll.append(1)
+ll.append(10)
+ll.append(100)
+ll.printNode()
