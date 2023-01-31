@@ -364,7 +364,7 @@
 
 // getChiken().then((chicken)=> fetchEgg(chicken)).then((egg)=>console.log(egg))
 
-function getBanana(){
+/* function getBanana(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve('🍌')
@@ -383,7 +383,7 @@ function getApple(){
 function getOrange(){
     return Promise.reject(new Error('no Orange'))
 }
-
+ */
 
 // getBanana().then((banana)=>{
 //     getApple().then((apple)=>{
@@ -418,7 +418,7 @@ function getOrange(){
 // }) // 성공하든 실패하든 결과를 배열로 묶어서 리턴해줌
 
 
-console.clear()
+/* console.clear() */
 // async function fetchFruits(){
 //     const banana = await getBanana()
 //     const apple = await getApple()
@@ -433,7 +433,7 @@ console.clear()
 // fetchFruits().then(console.log)
 
 
-function getChiken(){
+/* function getChiken(){
     return Promise.resolve('chiken')
 }
 
@@ -453,4 +453,5 @@ async function chicken(){
     return `${egg} ${fry}`
 }
 
-chicken().then(console.log)
+chicken().then(console.log) */
+
