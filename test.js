@@ -455,3 +455,61 @@ async function chicken(){
 
 chicken().then(console.log) */
 
+// 생성자 속성 정의
+
+/* function Person(name, age){
+    this.name = name
+    this.age = age
+}
+
+Person.prototype.isAudlt = function(){
+    return this.age > 18
+}
+
+Person.prototype.test = function(){
+    return this.name.length > 4
+}
+
+const p1 = new Person('bob', 26)
+const p2 = new Person('elice', 16)
+
+console.log(p1);
+console.log(p2);
+console.log(Object.getOwnPropertyDescriptors(p1));
+
+console.log(p1.isAudlt())
+console.log(p2.isAudlt())
+
+console.log(p1.test())
+console.log(p2.test()) */
+
+function Node(data){
+    this.data = data
+    this.next = null
+}
+
+function LinkedList(){
+    this.head = null
+    this.length =0
+}
+
+LinkedList.prototype.size = ()=>{
+    return this.length
+}
+
+LinkedList.prototype.isEmpty= ()=>{
+    return this.length ===0
+}
+
+let ll = new LinkedList()
+console.log(ll)
+
+ll.head = new Node(123)
+ll.length++
+console.log(ll)
+
+ll.head.next = new Node(456)
+ll.length++
+console.log(ll);
+
+console.log(ll.size());
