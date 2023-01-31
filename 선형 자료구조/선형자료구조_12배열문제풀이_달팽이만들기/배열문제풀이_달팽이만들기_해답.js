@@ -19,19 +19,19 @@ function answer(length) {
   let x, y, num;
   x = y = num = 0;
   x--;
-  while (1) {
+  while (1) { // 무한 루프
     for (let i = 0; i < length; i++) {
-      x += direction;
-      result[y][x] = ++num;
+      x += direction; // x =0 , 1, 2 , 1 ,0
+      result[y][x] = ++num; //0,0 = 1, 0,1 =2, 0,2 =3 2,1 = 6, 2,0 =7 1,1 =9
     }
 
     length--;
 
     if (length <= 0) break;
 
-    for (let j = 0; j < length; j++) {
-      y += direction;
-      result[y][x] = ++num;
+    for (let j = 0; j < length; j++) { // 0~2
+      y += direction; // y= 1, 2, 1
+      result[y][x] = ++num; //1,2 = 4 2,2 = 5 1,0 =8
     }
 
     direction *= -1;
