@@ -705,13 +705,13 @@ Stack.prototype.isEmpty = function(){
     return this.array.length ===0
 }
 
-let stack = new Stack([1,2,3])
-let data = stack.getBuffer()
-console.log(stack);
-console.log(data);
+// let stack = new Stack([1,2,3])
+// let data = stack.getBuffer()
+// console.log(stack);
+// console.log(data);
 
 
-console.log(stack.isEmpty()); // 깊은 복사가 진행됨
+// console.log(stack.isEmpty()); // 깊은 복사가 진행됨
 
 Stack.prototype.push = function(element){
     return this.array.push(element)
@@ -729,5 +729,39 @@ Stack.prototype.size = function(){
     return this.array.length
 }
 
+let stack = new Stack([1,2])
+stack.push(3)
+stack.push(4)
+stack.push(5)
+stack.push(6)
 
+const del = stack.pop()
+console.log(del);
+console.log(stack);
 console.log(stack.size());
+
+console.log(stack.peek());
+
+Stack.prototype.indexOf = function(element, index=0){
+    for(let i=index; i<this.array.length; i++){
+        if(this.array[i] === element){
+            return i
+        }else{
+            return 'nothing'
+        }
+    }
+}
+
+Stack.prototype.includes = function(element){
+    for(let i=0; i<this.array.length; i++){
+        if(this.array[i] === element){
+            return true
+        }else{
+            return false
+        }
+    }
+}
+console.clear()
+console.log(stack);
+console.log(stack.indexOf(1));
+console.log(stack.includes(1));
