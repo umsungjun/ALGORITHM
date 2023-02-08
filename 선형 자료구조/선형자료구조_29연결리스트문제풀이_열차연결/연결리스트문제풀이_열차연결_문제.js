@@ -10,13 +10,21 @@ function LinkedList() {
 
 function answer(nums) {
   let ll = new LinkedList();
+  
+  let prev, current
 
-  // 코드 구현 시작 영역
+  for(let i=0; i<nums.length; i++){
+    // 기차 생성
+    current = new Train(nums[i])
 
-  // …
+    if(i ===0){
+      ll.head = current
+    }else{
+      prev.next = current
+    }
 
-  // 코드 구현 종료 영역
-
+    prev = current
+  }
   return ll;
 }
 

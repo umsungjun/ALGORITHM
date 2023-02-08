@@ -602,7 +602,7 @@ LinkedList.prototype.isEmpty = function(){
 //  dll.tail = node
 //   console.log(dll);
 
-class Node{
+/* class Node{
     constructor(data, next){
         this.data = data
         this.next = next
@@ -617,9 +617,7 @@ class LinkedList{
     }
     
     insertFirst(data){
-        let newNode = new Node(data, null)
-        if(this.isEmpty()){ //만약에 비어있다면
-            this.head = newNode
+        lhis.head = newNode
             this.tail = newNode
             this.size++
             return
@@ -636,7 +634,9 @@ class LinkedList{
             this.head = newNode
             this.tail = newNode
             this.size++
-            return
+            reet newNode = new Node(data, null)
+        if(this.isEmpty()){ //만약에 비어있다면
+            tturn
         }
 
         this.tail.next = newNode
@@ -686,4 +686,48 @@ class LinkedList{
     isEmpty(){
         return !this.size
     }
+} */
+
+//Stack() : 생성자 함수
+function Stack(array){
+    this.array = array ? array:[]
 }
+
+// getBuffer() : 객체 내 데이터 셋 반환
+Stack.prototype.getBuffer = function(){
+    return this.array.slice()
+}
+
+
+// isEmpty() : 객체 낸 데이터 o / x
+
+Stack.prototype.isEmpty = function(){
+    return this.array.length ===0
+}
+
+let stack = new Stack([1,2,3])
+let data = stack.getBuffer()
+console.log(stack);
+console.log(data);
+
+
+console.log(stack.isEmpty()); // 깊은 복사가 진행됨
+
+Stack.prototype.push = function(element){
+    return this.array.push(element)
+}
+
+Stack.prototype.pop = function(){
+    return this.array.pop()
+}
+
+Stack.prototype.peek = function(){
+    return this.array[this.array.length-1]
+}
+
+Stack.prototype.size = function(){
+    return this.array.length
+}
+
+
+console.log(stack.size());
