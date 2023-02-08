@@ -558,3 +558,132 @@ LinkedList.prototype.size = function(){
 LinkedList.prototype.isEmpty = function(){
     return this.length ===0
 } */
+
+//Node
+// function Node(data){
+//     this.data = data
+//     this.next = null
+//     this.prev = null
+// }
+
+// function DoubleLinkedList(){
+//     this.head = null
+//     this.tail = null
+//     this.length = 0
+// }
+
+// DoubleLinkedList.prototype.size = function(){
+//     return this.length
+// }
+
+// DoubleLinkedList.prototype.isEmpty = function(){
+//     return this.length ===0
+// }
+
+// let dll = new DoubleLinkedList()
+
+
+// let node
+// node = new Node(123)
+// dll.head = node
+// dll.tail = node
+// dll.length++
+
+// // output
+// /* DoubleLinkedList {
+//     head: Node { data: 123, next: null, prev: null },
+//     tail: Node { data: 123, next: null, prev: null },
+//     length: 1
+//   } */
+
+//   node = new Node(456)
+//  dll.tail.next = node
+//  node.prev = dll.tail
+//  dll.tail = node
+//   console.log(dll);
+
+class Node{
+    constructor(data, next){
+        this.data = data
+        this.next = next
+    }
+}
+
+class LinkedList{
+    constructor(){
+        this.head =null
+        this.tail = null
+        this.size = 0
+    }
+    
+    insertFirst(data){
+        let newNode = new Node(data, null)
+        if(this.isEmpty()){ //만약에 비어있다면
+            this.head = newNode
+            this.tail = newNode
+            this.size++
+            return
+        }
+
+        newNode.next = this.head // 새로운 노드가 기존의 있던 첫번째 노드의 head가 됨
+        this.head = newNode
+        this.size++
+    }
+
+    insertLast(data){
+        let newNode = new Node(data, null)
+        if(this.isEmpty()){ //만약에 비어있다면
+            this.head = newNode
+            this.tail = newNode
+            this.size++
+            return
+        }
+
+        this.tail.next = newNode
+        this.tail = newNode
+        size++
+    }
+
+    insertAt(idx, data){
+        let newNode = new Node(data, null)
+        if(this.isEmpty()){ //만약에 비어있다면
+            this.head = newNode
+            this.tail = newNode
+            this.size++
+            return
+        }
+
+        let cur = this.head
+        let count = 1
+        while(cur !=null){
+            if(count +1 ==idx){
+                break
+            }
+            cur = cur.next
+            count++
+        }
+    }
+
+    removeFirst(){
+
+    }
+    removeLast(){
+
+    }
+
+    remove(data){
+
+    }
+
+    search(){
+
+    }
+
+    getSize(){
+        return this.size
+    }
+
+    isEmpty(){
+        return !this.size
+    }
+}
