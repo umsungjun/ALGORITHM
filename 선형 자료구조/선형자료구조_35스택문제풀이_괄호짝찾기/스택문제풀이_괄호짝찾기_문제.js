@@ -4,11 +4,17 @@
 function answer(str) {
   let result = [];
 
-  // 코드 구현 시작 영역
+  let stack = []
+  for(let i=0; i<str.length; i++){
+    if(str[i] == '('){
+      stack.push(i)
+    }else if(str[i] == ')'){
+      if(stack.length ==0) return []
 
-  // …
-
-  // 코드 구현 종료 영역
+      result.push([stack.pop(), i])
+    }
+  }
+  if(!stack.length ==0) return []
 
   return result;
 }
