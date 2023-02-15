@@ -4,11 +4,8 @@
 function answer(str) {
   let result = [];
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
+  let stack =[]
+  let dish = str.split('').sort().join('') //"bacd",
 
   return result;
 }

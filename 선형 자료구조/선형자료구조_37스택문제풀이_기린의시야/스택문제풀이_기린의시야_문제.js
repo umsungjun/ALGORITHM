@@ -4,12 +4,19 @@
 function answer(giraffe) {
   let result = 0;
 
-  // 코드 구현 시작 영역
-
-  // …
-
-  // 코드 구현 종료 영역
-
+  let see =1
+  for(let i=0; i<giraffe.length; i++){
+    for(let j=i+1; j<giraffe.length; j++){
+      if(giraffe[i] > giraffe[j]){
+        see++
+      }else{
+        result+=see
+        see=0
+        break
+        
+      }
+    }
+  }
   return result;
 }
 
