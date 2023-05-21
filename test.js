@@ -24,7 +24,6 @@
 // let input = ['a', 'b', 'c']
 // let count = 0 // 1이추가됨
 
-
 // const permutation = (arr, s, r) => { // arr 배열, 시작할 위치 s, 몇개를 뽑을지 r
 
 //     // 1. 재귀함수를 멈춰야 할 조건
@@ -82,7 +81,6 @@
 // combination(input)
 // console.log(count);
 
-
 // let result
 // let count = 0
 // function forloop(s, t, number) {
@@ -99,8 +97,6 @@
 //     return acc
 // }
 
-
-
 // function recusive(s, t, number) {
 //     // 멈출 조건
 //     if (number == 1) {
@@ -112,7 +108,6 @@
 
 // result = recusive(3, 2, 5) // 초기값 3 등차값 2 반복횟수 5
 // console.log(result);
-
 
 // const double = (crr, db, num) => {
 //     for (let i = 1; i <= num; i++) {
@@ -140,7 +135,6 @@
 // // 6 * 2
 // // 3 * 2
 
-
 // result = double(3, 2, 5)
 
 // console.log(result);
@@ -156,11 +150,8 @@
 // recusive(crr - 1) * crr
 // recusive(crr - 1) * crr
 
-
-
 // result = recusive(5)
 // console.log(result);
-
 
 // function myFunc(p1, p2, succeessCallback, failCallback){
 //     try{
@@ -252,7 +243,7 @@
 //             }
 //         },3000)
 //     })
-    
+
 // }
 
 // asynkFunc(true).then((sucess)=>{
@@ -263,10 +254,8 @@
 //     console.log('finaly')
 // })
 
- 
-
 // 동기는 하나가 끝날때까지 기다렸다가 다음게 실행되는거고
-// 비동기는 순서에 상관없이 
+// 비동기는 순서에 상관없이
 
 // const fetchUser = (isSucess)=>{
 //     return new Promise((resoleve, reject)=>{
@@ -282,7 +271,7 @@
 //                 reject('회원 정보 조회에 실패하였습니다.')
 //             }
 //         },3000)
-        
+
 //     })
 // }
 
@@ -329,7 +318,7 @@
 //     console.log('실행')
 // }
 
-// runInDelay('', 0) 
+// runInDelay('', 0)
 
 // function runInDelay(seconds){
 //     return new Promise((resolve, reject)=>{
@@ -339,7 +328,6 @@
 //         },seconds*1000)
 //     })
 
-
 // }
 // runInDelay(2).then(()=>{
 //     console.log('타이머 완료');
@@ -348,7 +336,6 @@
 // }).finally(()=>{
 //     console.log('끝났다')
 // })
-
 
 // function fetchEgg(chicken){
 //     return Promise.resolve(`${chicken} => 'egg'`)
@@ -417,7 +404,6 @@ function getOrange(){
 //     console.log(result) //배열로 반환됨
 // }) // 성공하든 실패하든 결과를 배열로 묶어서 리턴해줌
 
-
 /* console.clear() */
 // async function fetchFruits(){
 //     const banana = await getBanana()
@@ -425,13 +411,12 @@ function getOrange(){
 
 //     return [banana, apple]
 //     // return getBanana().then((banana)=>getApple().then((apple)=>[banana, apple]))
-// } 
+// }
 
 // fetchFruits().then((result)=>{
 //     console.log(result)
 // })
 // fetchFruits().then(console.log)
-
 
 /* function getChiken(){
     return Promise.resolve('chiken')
@@ -582,7 +567,6 @@ LinkedList.prototype.isEmpty = function(){
 
 // let dll = new DoubleLinkedList()
 
-
 // let node
 // node = new Node(123)
 // dll.head = node
@@ -689,79 +673,77 @@ class LinkedList{
 } */
 
 //Stack() : 생성자 함수
-function Stack(array){
-    this.array = array ? array:[]
+function Stack(array) {
+  this.array = array ? array : [];
 }
 
 // getBuffer() : 객체 내 데이터 셋 반환
-Stack.prototype.getBuffer = function(){
-    return this.array.slice()
-}
-
+Stack.prototype.getBuffer = function () {
+  return this.array.slice();
+};
 
 // isEmpty() : 객체 낸 데이터 o / x
 
-Stack.prototype.isEmpty = function(){
-    return this.array.length ===0
-}
+Stack.prototype.isEmpty = function () {
+  return this.array.length === 0;
+};
 
 // let stack = new Stack([1,2,3])
 // let data = stack.getBuffer()
 // console.log(stack);
 // console.log(data);
 
-
 // console.log(stack.isEmpty()); // 깊은 복사가 진행됨
 
-Stack.prototype.push = function(element){
-    return this.array.push(element)
-}
+// Stack.prototype.push = function(element){
+//     return this.array.push(element)
+// }
 
-Stack.prototype.pop = function(){
-    return this.array.pop()
-}
+// Stack.prototype.pop = function(){
+//     return this.array.pop()
+// }
 
-Stack.prototype.peek = function(){
-    return this.array[this.array.length-1]
-}
+// Stack.prototype.peek = function(){
+//     return this.array[this.array.length-1]
+// }
 
-Stack.prototype.size = function(){
-    return this.array.length
-}
+// Stack.prototype.size = function(){
+//     return this.array.length
+// }
 
-let stack = new Stack([1,2])
-stack.push(3)
-stack.push(4)
-stack.push(5)
-stack.push(6)
+// let stack = new Stack([1,2])
+// stack.push(3)
+// stack.push(4)
+// stack.push(5)
+// stack.push(6)
 
-const del = stack.pop()
-console.log(del);
-console.log(stack);
-console.log(stack.size());
+// const del = stack.pop()
+// console.log(del);
+// console.log(stack);
+// console.log(stack.size());
 
-console.log(stack.peek());
+// console.log(stack.peek());
 
-Stack.prototype.indexOf = function(element, index=0){
-    for(let i=index; i<this.array.length; i++){
-        if(this.array[i] === element){
-            return i
-        }else{
-            return 'nothing'
-        }
-    }
-}
+// Stack.prototype.indexOf = function(element, index=0){
+//     for(let i=index; i<this.array.length; i++){
+//         if(this.array[i] === element){
+//             return i
+//         }else{
+//             return 'nothing'
+//         }
+//     }
+// }
 
-Stack.prototype.includes = function(element){
-    for(let i=0; i<this.array.length; i++){
-        if(this.array[i] === element){
-            return true
-        }else{
-            return false
-        }
-    }
-}
-console.clear()
-console.log(stack);
-console.log(stack.indexOf(1));
-console.log(stack.includes(1));
+// Stack.prototype.includes = function(element){
+//     for(let i=0; i<this.array.length; i++){
+//         if(this.array[i] === element){
+//             return true
+//         }else{
+//             return false
+//         }
+//     }
+// }
+// console.clear()
+// console.log(stack);
+// console.log(stack.indexOf(1));
+// console.log(stack.includes(1));
