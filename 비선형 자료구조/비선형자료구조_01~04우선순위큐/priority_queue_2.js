@@ -38,3 +38,7 @@ PriorityQueue.prototype.enqueue = function (data, priority) {
 
   return this.array.length;
 };
+
+PriorityQueue.prototype.dequeue = function () {
+  return this.array.shift();
+};
