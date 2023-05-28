@@ -38,22 +38,3 @@ PriorityQueue.prototype.enqueue = function (data, priority) {
 
   return this.array.length;
 };
-
-// dequeue(): 데이터 삭제
-PriorityQueue.prototype.dequeue = function () {
-  return this.array.shift();
-};
-
-let pq = new PriorityQueue();
-
-pq.enqueue("Alice", 1);
-pq.enqueue("Bob", 2);
-console.log(pq);
-
-pq.enqueue("Tom", 1);
-pq.enqueue("John", 3);
-console.log(pq);
-
-console.log(pq.dequeue());
-console.log(pq.dequeue());
-console.log(pq);
