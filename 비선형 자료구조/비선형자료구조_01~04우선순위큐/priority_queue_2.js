@@ -42,3 +42,11 @@ PriorityQueue.prototype.enqueue = function (data, priority) {
 PriorityQueue.prototype.dequeue = function () {
   return this.array.shift();
 };
+
+let pq = new PriorityQueue();
+
+pq.enqueue("Alice", 1);
+pq.enqueue("Bob", 2);
+pq.enqueue("Sungjun", 1);
+
+console.log(pq);
