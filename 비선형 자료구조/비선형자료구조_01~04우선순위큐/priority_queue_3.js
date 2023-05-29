@@ -63,8 +63,6 @@ let pq = new PriorityQueue();
 
 pq.enqueue("Alice", 1);
 pq.enqueue("Bob", 2);
-pq.enqueue("Tom", 1);
-pq.enqueue("John", 3);
 
 console.log(pq.getBuffer());
 
